@@ -1,0 +1,6 @@
+{
+  "name": "Imentiv AI Replica",
+  "description": "A multimodal emotion recognition platform demonstrating image and text sentiment analysis.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

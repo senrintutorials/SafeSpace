@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "alerts": {
+      "title": "Safety Alerts",
+      "description": "Triggered safety alerts and incident reports for monitoring",
+      "type": "object",
+      "properties": {
+        "timestamp": { "type": "string", "format": "date-time" },
+        "category": { "type": "string" },
+        "severity": { "type": "string" },
+        "sourceModule": { "type": "string" },
+        "flaggedContent": { "type": "string" },
+        "triggerReason": { "type": "string" },
+        "status": { "type": "string" },
+        "recommendedActions": { "type": "array", "items": { "type": "string" } },
+        "userSessionId": { "type": "string" }
+      },
+      "required": ["timestamp", "category", "severity", "status"]
+    },
+    "journal_entries": {
+      "title": "Journal Entries",
+      "description": "User journal entries and emotion analysis history",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "content": { "type": "string" },
+        "sentiment": { "type": "string" },
+        "emotions": { "type": "array" },
+        "summary": { "type": "string" }
+      },
+      "required": ["userId", "timestamp", "content"]
+    },
+    "authority_chats": {
+      "title": "Authority Student Outreach Chats",
+      "description": "Direct confidential communication threads between Respective Authorities and Students triggered by Red Flags",
+      "type": "object",
+      "properties": {
+        "alertId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "studentLrn": { "type": "string" },
+        "authorityRole": { "type": "string" },
+        "authorityName": { "type": "string" },
+        "redFlagCategory": { "type": "string" },
+        "triggerReason": { "type": "string" },
+        "lastMessage": { "type": "string" },
+        "lastUpdated": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" },
+        "unreadCountStudent": { "type": "number" },
+        "unreadCountAuthority": { "type": "number" }
+      },
+      "required": ["alertId", "studentLrn", "redFlagCategory"]
+    },
+    "authority_messages": {
+      "title": "Authority Chat Messages",
+      "description": "Individual messages exchanged between Authorities and Students for Red Flag outreach",
+      "type": "object",
+      "properties": {
+        "chatId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderRole": { "type": "string" },
+        "recipientRole": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "isRedFlagSystemNote": { "type": "boolean" },
+        "read": { "type": "boolean" }
+      },
+      "required": ["chatId", "senderRole", "text", "timestamp"]
+    }
+  }
+}
